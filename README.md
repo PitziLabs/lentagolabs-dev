@@ -3,7 +3,7 @@
 The landing site for **Lentago Labs**, the infrastructure-operations consulting
 practice — destined for [lentago.dev](https://lentago.dev). It's an Astro static
 site served as a container on the
-[foundry-platform-demo](https://github.com/PitziLabs/foundry-platform-demo)
+[foundry-platform-demo](https://github.com/lentago/foundry-platform-demo)
 AWS stack (GitHub OIDC → ECR → ECS Fargate → ALB), the same platform that runs
 [icecreamtofightwith.com](https://icecreamtofightwith.com).
 
@@ -12,7 +12,7 @@ AWS stack (GitHub OIDC → ECR → ECS Fargate → ALB), the same platform that 
 > name, the palette (navy + orange + cream → **teal + copper + limestone**), and
 > the brand motif (terminal `<pl:>` command-prompt → **survey benchmark-disk +
 > contour lines**). The original site lives at
-> [pitzilabs-dev](https://github.com/PitziLabs/pitzilabs-dev).
+> [pitzilabs-dev](https://github.com/lentago/pitzilabs-dev).
 
 **Authorship:** The code and design in this repo are co-written with
 [Claude](https://claude.ai) (Anthropic). I direct the work, supply the brand and
@@ -73,4 +73,4 @@ hidden subdomain is then retired.
 
 ---
 
-*Part of the [PitziLabs](https://github.com/PitziLabs) portfolio.*
+*Part of the [Lentago Labs](https://github.com/lentago) portfolio.*

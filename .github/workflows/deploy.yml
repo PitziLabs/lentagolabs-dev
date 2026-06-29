@@ -10,7 +10,7 @@
 #
 # >>> MANUAL-ONLY until provisioned. The ECR repo `foundry-dev-lentago`, the ECS
 # service `foundry-dev-lentago`, and the OIDC trust for THIS repo
-# (PitziLabs/lentagolabs-dev) do not exist yet — they must be added to
+# (lentago/lentagolabs-dev) do not exist yet — they must be added to
 # foundry-platform-demo first, mirroring the pitzilabs-dev modules/site entry.
 # The trigger is `workflow_dispatch` only so a fresh push to main doesn't fail a
 # deploy that can't authenticate. Once the infra exists, restore:

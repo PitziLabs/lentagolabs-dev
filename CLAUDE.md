@@ -2,7 +2,7 @@
 
 > Read [README.md](README.md) for what this repo is, how it builds, and how it
 > deploys. This file is operational notes for Claude: where the source of truth
-> lives, how this site was built, and the conventions to respect. PitziLabs
+> lives, how this site was built, and the conventions to respect. Lentago Labs
 > fleet-wide rules (PR workflow, attribution) live in `~/repos/CLAUDE.md` and
 > are NOT restated here.
 
@@ -23,7 +23,7 @@ React components rendered **server-side only** (no client hydration). Eventually
 
 **Rebrand lineage.** Lentago Labs is the "Tidewater" rebrand of the former Pitzi
 Labs. The layout, copy skeleton, and Astro architecture were ported from
-[pitzilabs-dev](https://github.com/PitziLabs/pitzilabs-dev); the **palette and
+[pitzilabs-dev](https://github.com/lentago/pitzilabs-dev); the **palette and
 brand mark are net-new** (teal + copper + limestone; the benchmark-disk mark).
 
 ## Source of truth
@@ -73,7 +73,7 @@ interactive browser preview. The port:
 | ECR repo | `foundry-dev-lentago` *(pending provisioning)* |
 | ECS cluster / service | `foundry-dev-cluster` / `foundry-dev-lentago` *(pending)* |
 | OIDC deploy role | `arn:aws:iam::365184644049:role/foundry-dev-github-actions` |
-| Platform repo | [foundry-platform-demo](https://github.com/PitziLabs/foundry-platform-demo) (`modules/site`) |
+| Platform repo | [foundry-platform-demo](https://github.com/lentago/foundry-platform-demo) (`modules/site`) |
 
 **Deploy is not yet wired live.** `deploy.yml` is parameterised but runs on
 `workflow_dispatch` only — the ECR repo, ECS service, and the OIDC trust for
@@ -83,7 +83,7 @@ pitzilabs-dev `modules/site` entry). Once provisioned, restore the
 
 ## CI & branch protection (fleet standard)
 
-This repo follows the PitziLabs fleet standard (`~/repos/dotgithub/fleet-ops`):
+This repo follows the Lentago Labs fleet standard (`~/repos/dotgithub/fleet-ops`):
 squash-only merge button, auto-merge, delete-branch, the `pitzilabs`+`claude`
 topic spine, and a `main` branch ruleset (PR required, no force-push, no deletion).
 
@@ -106,12 +106,12 @@ topic spine, and a `main` branch ruleset (PR required, no force-push, no deletio
 - Founder credit in the footer reads the operator's real name (Christopher
   Pitzi) under the Lentago brand — intentional; confirm before changing.
 - GitHub references in the site copy read `github.com/LentagoLabs` (the
-  brand-forward future org) while the repo itself lives under `PitziLabs` —
+  brand-forward future org) while the repo itself lives under `Lentago Labs` —
   reconcile when/if a LentagoLabs org is created.
 
 ## When in doubt
 
 - Visual/brand question → `/BRAND.md` + `public/design-system`; live truth is
   `src/`.
-- Deploy question → mirror [ice-cream-book](https://github.com/PitziLabs/ice-cream-book)'s
+- Deploy question → mirror [ice-cream-book](https://github.com/lentago/ice-cream-book)'s
   `deploy.yml` / `Dockerfile` / `nginx.conf`, swapping the ECR/ECS names above.

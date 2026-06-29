@@ -1,7 +1,7 @@
 # Deploying lentagolabs-dev on the Foundry Platform
 
 A runbook for **Platform Claude** (the Terraform steward of
-[foundry-platform-demo](https://github.com/PitziLabs/foundry-platform-demo)) to
+[foundry-platform-demo](https://github.com/lentago/foundry-platform-demo)) to
 wire this site onto the shared AWS platform, mirroring how `pitzilabs-dev` is
 already hosted.
 
@@ -67,7 +67,7 @@ In `environments/dev/main.tf`, the `module "iam"` block, extend
   additional_app_github_repos = ["pitzilabs-dev", "lentagolabs-dev"]
 ```
 
-This is what lets `PitziLabs/lentagolabs-dev`'s deploy workflow assume
+This is what lets `lentago/lentagolabs-dev`'s deploy workflow assume
 `foundry-dev-github-actions`. Without it the deploy fails at
 `configure-aws-credentials` with an STS `AssumeRoleWithWebIdentity` trust error.
 
@@ -154,7 +154,7 @@ output "lentago_ecs_service_name" {
 
    ```bash
    gh variable set LENTAGO_PREVIEW_HOST \
-     --repo PitziLabs/foundry-platform-demo \
+     --repo lentago/foundry-platform-demo \
      --body 'lt-preview-7q2x9k.icecreamtofightwith.com'
    ```
 
