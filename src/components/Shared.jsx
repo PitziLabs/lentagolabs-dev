@@ -4,9 +4,9 @@
 // Design System (slate-teal + copper + limestone). They render SERVER-SIDE
 // ONLY — there is no hydration on this site — so any interactivity is
 // expressed as CSS (embedded <style> tags / :hover), never shipped JS.
-import { BrandMark } from "./Brand.jsx";
+import { BrandMark, BlossomWatermark } from "./Brand.jsx";
 
-export { BrandMark };
+export { BrandMark, BlossomWatermark };
 
 /* ---------- Eyebrow — mono uppercase kicker, optional ◆ section marker ---- */
 export function Eyebrow({ children, tone = "muted", marker = false, style }) {

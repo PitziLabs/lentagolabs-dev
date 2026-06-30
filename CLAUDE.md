@@ -24,7 +24,7 @@ React components rendered **server-side only** (no client hydration). Eventually
 **Rebrand lineage.** Lentago Labs is the "Tidewater" rebrand of the former Pitzi
 Labs. The layout, copy skeleton, and Astro architecture were ported from
 [pitzilabs-dev](https://github.com/lentago/pitzilabs-dev); the **palette and
-brand mark are net-new** (teal + copper + limestone; the benchmark-disk mark).
+brand mark are net-new** (teal + copper + limestone; the five-petal blossom mark).
 
 ## Source of truth
 
@@ -56,12 +56,13 @@ interactive browser preview. The port:
 
 ## Brand quick reference (full contract in `/BRAND.md`)
 
-- Mark: the **benchmark disk** (copper survey ring + cream crosshair + station
-  tick, in a deep-teal chip). Field prompt glyph: copper **▲** + `lentago`.
+- Mark: the **five-petal blossom** (limestone petals + teal contour outlines +
+  deep-teal stamens with copper anther tips + pale center; reversed to cream +
+  copper on a teal chip for favicon/og). Field prompt glyph: copper **▲** + `lentago`.
 - Palette: teal `#1c4a44` / `#0e2b28`, copper `#c2643c`, limestone `#f3f0e8`.
   Copper is an accent, not a fill — one element per region.
 - Type: Space Grotesk (display/body), JetBrains Mono (mono). Self-hosted.
-- Dark surfaces get contour lines + a benchmark-disk watermark; light surfaces
+- Dark surfaces get contour lines + a blossom watermark; light surfaces
   are flat paper. Terminal/field-station mocks use ▲ `lentago`, not `$` or `>`.
 
 ## Build / deploy quick reference

@@ -10,21 +10,27 @@ and the brand mark**; this contract is authoritative for all three.
 
 ## Brand mark
 
-The mark is a **benchmark disk** — a surveyor's survey marker: a copper ring
-with a cream crosshair, a center point, and a station tick, set in a deep-teal
-rounded chip. It reads as instrument precision rooted to a fixed point in place
-(the name leans on *lento* — measured, unhurried — and a sense of place). Three
-rendering scales are common:
+The mark is a **five-petal blossom** — limestone petals carried by teal contour
+outlines, a spray of deep-teal stamens tipped in copper anthers, and a pale
+center. It reads as something cultivated and quietly exact: order and growth
+rooted to a fixed center (the name leans on *lento* — measured, unhurried). It
+is net-new to "Tidewater" and replaced the former Pitzi-era benchmark disk.
+Common renderings:
 
-- **Chip** — the rounded benchmark-disk square (favicon, nav, business cards).
-  `lentago-mark-square.svg` is the sharp-cornered variant for favicons/og/print.
-- **Watermark** — a giant translucent benchmark disk bleeding off a corner. Use
+- **Inline mark** — the blossom in place, teal outlines on limestone petals
+  (nav, footer, business cards).
+- **Chip** — the blossom reversed to cream lines + copper anthers on a deep-teal
+  square. `favicon.svg` is the rounded chip (simplified to five stamens for
+  legibility at tab size); `lentago-mark-square.svg` is the sharp-cornered,
+  full-detail variant for favicons/og/print.
+- **Watermark** — a giant translucent blossom bleeding off a corner. Use
   sparingly on dark surfaces (the hero does this).
 - **Field prompt** — the copper **▲ triangulation marker** + `lentago` as a
   runbook/CLI prompt glyph. **Never `$` or `>`.**
 
-The mark is drawn (SVG), not typed — render it via the `BrandMark` component in
-`src/components/Brand.jsx`, or from the static files in `public/`.
+The mark is drawn (SVG), not typed — `BrandMark` (inline/chip) and
+`BlossomWatermark` (ghost) in `src/components/Brand.jsx` are the source of truth
+for the geometry; the static `public/*.svg` files mirror it.
 
 ## Palette — "Tidewater"
 
@@ -63,7 +69,7 @@ warn · `#c2643c` info (== accent) · `#bb4a33` err — each tuned warm to sit o
 - Copper is an accent color — **one element per region, never a fill.** A whole
   copper button is the single CTA; don't paint surfaces copper.
 - Dark surfaces carry faint **topographic contour lines** (nested copper curves
-  at ~8–16% opacity) and often a **giant translucent benchmark-disk watermark**.
+  at ~8–16% opacity) and often a **giant translucent blossom watermark**.
   The only gradient is the hero's `150deg #0e2b28 → #1c4a44` (`--grad-hero`).
 - Corners are small and sharp (2–12px). Hairline borders `#ddd6c6` do the
   structural work; cards lean on the border, not elevation.

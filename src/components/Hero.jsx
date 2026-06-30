@@ -1,6 +1,6 @@
-import { StatusDot, Eyebrow, Button } from "./Shared.jsx";
+import { StatusDot, Eyebrow, Button, BlossomWatermark } from "./Shared.jsx";
 
-// Dark teal hero — topographic contour backing, a giant ghost benchmark-disk
+// Dark teal hero — topographic contour backing, a giant ghost blossom
 // watermark bleeding off the corner, the headline, and the primary actions.
 // Static port of the design-system Hero: the prototype's onNav button handlers
 // become plain #anchors (the Button primitive renders an <a> when given href).
@@ -22,15 +22,9 @@ export function HeroDark() {
         <path d="M-40 180 C 260 110 440 230 720 170 S 1200 80 1500 170" />
         <path d="M-40 120 C 260 50 440 170 720 110 S 1200 20 1500 110" />
       </svg>
-      {/* Giant ghost benchmark-disk watermark */}
-      <svg width="560" height="560" viewBox="0 0 64 64" fill="none" style={{
-        position: "absolute", right: -120, bottom: -180,
-        userSelect: "none", pointerEvents: "none", opacity: 0.06,
-      }}>
-        <circle cx="32" cy="30" r="13" fill="none" stroke="var(--color-accent)" strokeWidth="2" />
-        <path d="M32 14v32M16 30h32" stroke="var(--color-on-dark)" strokeWidth="1.2" />
-        <circle cx="32" cy="30" r="2.6" fill="var(--color-accent)" />
-      </svg>
+      {/* Giant ghost blossom watermark */}
+      <BlossomWatermark size={560} opacity={0.06}
+        style={{ position: "absolute", right: -120, bottom: -180 }} />
 
       <div style={{ maxWidth: 1024, margin: "0 auto", position: "relative" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
