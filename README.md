@@ -1,7 +1,7 @@
 # lentagolabs-dev — Lentago Labs landing site
 
 The landing site for **Lentago Labs**, the infrastructure-operations consulting
-practice — destined for [lentago.dev](https://lentago.dev). It's an Astro static
+practice, live at [lentago.dev](https://lentago.dev). It's an Astro static
 site served as a container on the
 [foundry-platform-demo](https://github.com/lentago/foundry-platform-demo)
 AWS stack (GitHub OIDC → ECR → ECS Fargate → ALB), the same platform that runs
@@ -62,14 +62,15 @@ the foundry-platform OIDC role, no long-lived credentials.
 > **every push to `main`** (build → ECR → ECS rollout); `workflow_dispatch` is
 > kept for manual redeploys.
 
-## Preview → promotion
+## Live at lentago.dev
 
-While the design is iterated, the site is intended to be reachable only at a
-**hidden, unguessable subdomain** of `icecreamtofightwith.com` (covered by that
-domain's wildcard certificate, not linked anywhere). Once it's ready it gets
-**promoted to the `lentago.dev` FQDN** — see the `modules/site` notes in
-foundry-platform-demo. The skeleton service and image are reused unchanged; the
-hidden subdomain is then retired.
+The site is live at **[lentago.dev](https://lentago.dev)** (apex + `www`), served
+from the shared foundry ALB. During design it was reachable only at a hidden,
+unguessable subdomain of `icecreamtofightwith.com`; that preview host was retired
+on promotion. The promotion is Terraform-managed in foundry-platform-demo via
+`modules/apex-domain` (`module.lentago_domain`): its own Route 53 zone + ACM cert
+(apex + `www`, attached to the shared HTTPS listener via SNI) + a host-header rule
+to the existing `site_lentago` backend. The service and image are unchanged.
 
 ---
 

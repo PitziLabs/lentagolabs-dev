@@ -18,8 +18,9 @@ sentence is plenty; don't make a meal of it.
 A single-page Astro static site that reproduces a Claude Design handoff
 faithfully and serves it (nginx on ECS Fargate) via the `foundry-platform-demo`
 platform. There is no CMS and no database — the page is static HTML built from
-React components rendered **server-side only** (no client hydration). Eventually
-`lentago.dev`; before that a hidden preview subdomain of `icecreamtofightwith.com`.
+React components rendered **server-side only** (no client hydration). Live at
+`lentago.dev` (previewed on a hidden subdomain of `icecreamtofightwith.com`
+during design; that preview host is now retired).
 
 **Rebrand lineage.** Lentago Labs is the "Tidewater" rebrand of the former Pitzi
 Labs. The layout, copy skeleton, and Astro architecture were ported from
@@ -71,8 +72,9 @@ interactive browser preview. The port:
 |---|---|
 | Build | `npm install && npm run build` → `dist/` |
 | Container | `nginx:latest`, `listen 8080`, `/health` → 200 (ALB health check) |
-| ECR repo | `foundry-dev-lentago` *(pending provisioning)* |
-| ECS cluster / service | `foundry-dev-cluster` / `foundry-dev-lentago` *(pending)* |
+| ECR repo | `foundry-dev-lentago` |
+| ECS cluster / service | `foundry-dev-cluster` / `foundry-dev-lentago` |
+| Public domain | `lentago.dev` (+ `www`) — apex/www ALIAS → shared ALB, dedicated ACM cert via SNI |
 | OIDC deploy role | `arn:aws:iam::365184644049:role/foundry-dev-github-actions` |
 | Platform repo | [foundry-platform-demo](https://github.com/lentago/foundry-platform-demo) (`modules/site`) |
 

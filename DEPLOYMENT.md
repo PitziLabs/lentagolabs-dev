@@ -7,10 +7,10 @@ already hosted.
 
 This site is the **Lentago Labs** landing page — an Astro static site packaged
 into an `nginx` container (`:8080`, `/health`), identical in shape to
-`pitzilabs-dev`. It rides on the **shared ALB + shared ECS cluster** behind a
-hidden subdomain of `icecreamtofightwith.com` (covered by the existing
-`*.icecreamtofightwith.com` wildcard cert), and is later promoted to
-`lentago.dev`.
+`pitzilabs-dev`. It rides on the **shared ALB + shared ECS cluster** and is
+**live at `lentago.dev`** (apex + `www`). During design it previewed on a hidden
+subdomain of `icecreamtofightwith.com` (covered by the `*.icecreamtofightwith.com`
+wildcard cert); that preview host was retired on promotion.
 
 > **Status: ✅ provisioned 2026-06-30.** This runbook has been executed — the ECR
 > repo, ECS service, and OIDC trust for this repo exist in
@@ -237,14 +237,24 @@ aws ecs describe-services --cluster foundry-dev-cluster \
 Then load `https://<LENTAGO_PREVIEW_HOST>/` — you should get the teal/copper
 Lentago Labs landing page.
 
-## Later — promotion to lentago.dev
+## Promotion to lentago.dev — done ✅
 
-When the brand is ready to go public, reuse `module.site_lentago` unchanged:
-point an apex/`www` record (or a new hosted zone) for `lentago.dev` at the ALB,
-add `lentago.dev` to the ALB cert's SANs (or a dedicated cert), and add a
-host-header rule for it (or repoint `hostname`). Retire the hidden
-`icecreamtofightwith.com` preview subdomain. Update `astro.config.mjs` `site`
-(already `https://lentago.dev`) and the README preview note.
+The site was promoted to `lentago.dev` on 2026-07-01. Rather than repointing the
+preview `hostname`, it was done with a reusable **`modules/apex-domain`** in
+foundry (`module.lentago_domain`), which keeps `site_lentago` as the backend and
+adds the public domain in front of it:
+
+- Its own Route 53 hosted zone for `lentago.dev` (nameservers re-delegated from
+  Squarespace to Route 53 — the two-phase apply).
+- A dedicated ACM cert for `lentago.dev` + `www.lentago.dev`, attached to the
+  shared HTTPS listener via SNI (the `*.icecreamtofightwith.com` wildcard stays
+  the default cert).
+- A host-header rule routing `lentago.dev` / `www` to the existing
+  `site_lentago` target group, plus apex + `www` A-ALIAS records to the ALB.
+
+The hidden `lt-preview-*.icecreamtofightwith.com` host was then retired
+(`site_lentago` sets `create_dns_record = false`). `astro.config.mjs` `site` is
+`https://lentago.dev`.
 
 ---
 
